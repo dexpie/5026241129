@@ -1,13 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('halo', function () {
-    return "<h1>Halo, Selamat datang</h1>di tutorial laravel <b>www.malasngoding.com</b>";
+    return "<h1>Halo, Selamat datang</h1> di tutorial laravel <i>www.malasngoding.com</i>";
 });
 
 Route::get('blog', function () {
@@ -18,28 +21,57 @@ Route::get('pertemuan5', function () {
     return view('pertemuan5');
 });
 
-use App\Http\Controllers\DosenController;
-Route::get('dosen', [DosenController::class, 'index']);
+Route::get('pert5', function () {
+    return view('pertemuan5');
+});
 
+Route::get('dosen', [DosenController::class, 'index']);
 Route::get('biodata', [DosenController::class, 'biodata']);
 
+Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
+
+Route::get('/blog', [BlogController::class, 'home']);
+Route::get('/blog/tentang', [BlogController::class, 'tentang']);
+Route::get('/blog/kontak', [BlogController::class, 'kontak']);
+
 Route::get('tugas', function () {
-    return view('tugas-list'); });
+    return view('tugas-list');
+});
+
 Route::get('tugas/index', function () {
-    return view('index'); });
+    return view('index');
+});
+
 Route::get('tugas/linktree', function () {
-    return view('linktree'); });
+    return view('linktree');
+});
+
 Route::get('tugas/5026241129', function () {
-    return view('5026241129'); });
+    return view('5026241129');
+});
+
 Route::get('tugas/contoh', function () {
-    return view('contoh'); });
+    return view('contoh');
+});
+
 Route::get('tugas/intro', function () {
-    return view('intro'); });
+    return view('intro');
+});
+
 Route::get('tugas/news', function () {
-    return view('news'); });
+    return view('news');
+});
+
 Route::get('tugas/news1', function () {
-    return view('news1'); });
+    return view('news1');
+});
+
 Route::get('tugas/responsive', function () {
-    return view('responsive'); });
+    return view('responsive');
+});
+
 Route::get('tugas/template', function () {
-    return view('template'); });
+    return view('template');
+});
