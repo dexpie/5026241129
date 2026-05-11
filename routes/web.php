@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PegawaiDBController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -75,3 +76,5 @@ Route::get('tugas/responsive', function () {
 Route::get('tugas/template', function () {
     return view('template');
 });
+
+Route::get('/pegawai', [PegawaiDBController::class, 'index']);
