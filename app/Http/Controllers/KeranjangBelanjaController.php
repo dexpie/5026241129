@@ -15,12 +15,12 @@ class KeranjangBelanjaController extends Controller
         ]);
     }
 
-    public function beli()
+    public function tambah()
     {
         return view('keranjangbelanja.beli');
     }
 
-    public function tambah(Request $request)
+    public function beli(Request $request)
     {
         DB::table('keranjangbelanja')->insert([
             'KodeBarang' => $request->KodeBarang,

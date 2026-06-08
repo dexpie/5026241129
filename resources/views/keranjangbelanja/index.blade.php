@@ -2,7 +2,7 @@
 @section('title', 'Keranjang Belanja')
 @section('konten')
 
-    <a href="/keranjangbelanja/beli" class="btn btn-primary">Beli</a>
+    <a href="/keranjangbelanja/tambah" class="btn btn-primary">Tambah</a>
     <br />
     <br />
 
@@ -24,6 +24,7 @@
                 <td>{{ number_format($k->Harga) }}</td>
                 <td>{{ number_format($k->Jumlah * $k->Harga) }}</td>
                 <td>
+                    <a href="/keranjangbelanja/tambah" class="btn btn-success">Beli</a>
                     <a href="/keranjangbelanja/batal/{{ $k->id }}" class="btn btn-danger">Batal</a>
                 </td>
             </tr>

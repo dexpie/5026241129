@@ -4,7 +4,7 @@
 
     <h3>Beli Barang</h3>
 
-    <form action="/keranjangbelanja/tambah" method="post">
+    <form action="/keranjangbelanja/beli" method="post">
         {{ csrf_field() }}
 
         <div class="form-group">
@@ -24,7 +24,7 @@
 
         <br>
 
-        <input type="submit" value="Simpan" class="btn btn-primary">
+        <input type="submit" value="Beli" class="btn btn-primary">
         <a href="/keranjangbelanja" class="btn btn-secondary">Kembali</a>
     </form>
 

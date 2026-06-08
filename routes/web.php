@@ -48,8 +48,8 @@ Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.upda
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
 
 Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'index']);
-Route::get('/keranjangbelanja/beli', [KeranjangBelanjaController::class, 'beli']);
-Route::post('/keranjangbelanja/tambah', [KeranjangBelanjaController::class, 'tambah']);
+Route::get('/keranjangbelanja/tambah', [KeranjangBelanjaController::class, 'tambah']);
+Route::post('/keranjangbelanja/beli', [KeranjangBelanjaController::class, 'beli']);
 Route::get('/keranjangbelanja/batal/{id}', [KeranjangBelanjaController::class, 'batal']);
 
 Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
