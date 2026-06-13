@@ -8,6 +8,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KeranjangBelanjaController;
+use App\Http\Controllers\AgenController;
+use App\Http\Controllers\NilaiKuliahController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,6 +53,20 @@ Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'index']);
 Route::get('/keranjangbelanja/tambah', [KeranjangBelanjaController::class, 'tambah']);
 Route::post('/keranjangbelanja/beli', [KeranjangBelanjaController::class, 'beli']);
 Route::get('/keranjangbelanja/batal/{id}', [KeranjangBelanjaController::class, 'batal']);
+
+Route::get('/agen', [AgenController::class, 'index'])->name('agen.index');
+Route::get('/agen/tambah', [AgenController::class, 'tambah'])->name('agen.tambah');
+Route::post('/agen/store', [AgenController::class, 'store'])->name('agen.store');
+Route::get('/agen/edit/{kodeagen}', [AgenController::class, 'edit'])->name('agen.edit');
+Route::post('/agen/update', [AgenController::class, 'update'])->name('agen.update');
+Route::get('/agen/hapus/{kodeagen}', [AgenController::class, 'hapus'])->name('agen.hapus');
+
+Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index'])->name('nilaikuliah.index');
+Route::get('/nilaikuliah/tambah', [NilaiKuliahController::class, 'tambah'])->name('nilaikuliah.tambah');
+Route::post('/nilaikuliah/store', [NilaiKuliahController::class, 'store'])->name('nilaikuliah.store');
+Route::get('/nilaikuliah/edit/{id}', [NilaiKuliahController::class, 'edit'])->name('nilaikuliah.edit');
+Route::post('/nilaikuliah/update', [NilaiKuliahController::class, 'update'])->name('nilaikuliah.update');
+Route::get('/nilaikuliah/hapus/{id}', [NilaiKuliahController::class, 'hapus'])->name('nilaikuliah.hapus');
 
 Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 Route::get('/formulir', [PegawaiController::class, 'formulir']);
