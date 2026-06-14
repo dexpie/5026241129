@@ -64,9 +64,6 @@ Route::get('/agen/hapus/{kodeagen}', [AgenController::class, 'hapus'])->name('ag
 Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index'])->name('nilaikuliah.index');
 Route::get('/nilaikuliah/tambah', [NilaiKuliahController::class, 'tambah'])->name('nilaikuliah.tambah');
 Route::post('/nilaikuliah/store', [NilaiKuliahController::class, 'store'])->name('nilaikuliah.store');
-Route::get('/nilaikuliah/edit/{id}', [NilaiKuliahController::class, 'edit'])->name('nilaikuliah.edit');
-Route::post('/nilaikuliah/update', [NilaiKuliahController::class, 'update'])->name('nilaikuliah.update');
-Route::get('/nilaikuliah/hapus/{id}', [NilaiKuliahController::class, 'hapus'])->name('nilaikuliah.hapus');
 
 Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 Route::get('/formulir', [PegawaiController::class, 'formulir']);

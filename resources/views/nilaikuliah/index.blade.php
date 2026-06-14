@@ -41,7 +41,6 @@
             <th>SKS</th>
             <th>Nilai Huruf</th>
             <th>Bobot</th>
-            <th>Aksi</th>
         </tr>
 
         @forelse ($nilaikuliah as $item)
@@ -52,15 +51,10 @@
                 <td>{{ $item->SKS }}</td>
                 <td>{{ konversiNilaiHuruf($item->NilaiAngka) }}</td>
                 <td>{{ $item->NilaiAngka * $item->SKS }}</td>
-                <td>
-                    <a href="{{ route('nilaikuliah.edit', $item->ID) }}" class="btn btn-warning">Edit</a>
-                    <a href="{{ route('nilaikuliah.hapus', $item->ID) }}" class="btn btn-danger"
-                        onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
-                </td>
             </tr>
         @empty
             <tr>
-                <td colspan="7" class="text-center">Belum ada data nilai kuliah.</td>
+                <td colspan="6" class="text-center">Belum ada data nilai kuliah.</td>
             </tr>
         @endforelse
     </table>
