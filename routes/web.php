@@ -10,6 +10,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\AgenController;
 use App\Http\Controllers\NilaiKuliahController;
+use App\Http\Controllers\easController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -64,6 +65,10 @@ Route::get('/agen/hapus/{kodeagen}', [AgenController::class, 'hapus'])->name('ag
 Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index'])->name('nilaikuliah.index');
 Route::get('/nilaikuliah/tambah', [NilaiKuliahController::class, 'tambah'])->name('nilaikuliah.tambah');
 Route::post('/nilaikuliah/store', [NilaiKuliahController::class, 'store'])->name('nilaikuliah.store');
+
+Route::get('/eas', [EasController::class, 'index'])->name('eas.index');
+Route::get('/eas/tambah', [EasController::class, 'tambah'])->name('eas.tambah');
+Route::post('/eas/store', [EasController::class, 'store'])->name('eas.store');
 
 Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 Route::get('/formulir', [PegawaiController::class, 'formulir']);

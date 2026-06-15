@@ -36,7 +36,7 @@
                         <a class="nav-link" href="/nilaikuliah">PR 3 - Nilai Kuliah</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">EAS</a>
+                        <a class="nav-link" href="/eas">EAS</a>
                     </li>
                 </ul>
             </div>
